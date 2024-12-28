@@ -2,6 +2,16 @@ import fs from "fs/promises"
 import * as path from "path"
 
 /**
+ * Reads the contents of a file
+ * 
+ * @param filePath - The path to the file
+ * @returns A promise that resolves to the file contents
+ */
+export async function readFile(filePath: string): Promise<string> {
+  return await fs.readFile(filePath, 'utf-8');
+}
+
+/**
  * Asynchronously creates all non-existing subdirectories for a given file path
  * and collects them in an array for later deletion.
  *
